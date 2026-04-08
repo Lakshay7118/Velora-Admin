@@ -11,7 +11,7 @@ export default function Login() {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:5000/api/admin/login", form);
+      const res = await axios.post("https://velora-backend-production-3e79.up.railway.app/api/admin/login", form);
       localStorage.setItem("adminToken", res.data.token);
       
       // Using a slightly more modern redirect delay for UX

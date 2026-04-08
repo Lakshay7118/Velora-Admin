@@ -16,7 +16,7 @@ export default function Categories() {
 
   // 🔥 FETCH FROM DATABASE
   const fetchCategories = async () => {
-    const res = await axios.get("http://localhost:5000/api/categories");
+    const res = await axios.get("https://velora-backend-production-3e79.up.railway.app/api/categories");
     setCategories(res.data);
   };
 
@@ -28,7 +28,7 @@ export default function Categories() {
   const addCategory = async () => {
     if (!newCategory.trim()) return;
 
-    await axios.post("http://localhost:5000/api/categories", {
+    await axios.post("https://velora-backend-production-3e79.up.railway.app/api/categories", {
       name: newCategory
     });
 
@@ -44,7 +44,7 @@ export default function Categories() {
 
   if (!confirmDelete) return;
 
-  await axios.delete(`http://localhost:5000/api/categories/${id}`);
+  await axios.delete(`https://velora-backend-production-3e79.up.railway.app/api/categories/${id}`);
   fetchCategories();
 };
 

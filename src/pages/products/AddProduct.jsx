@@ -22,7 +22,7 @@ function AddProduct() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/categories");
+        const res = await axios.get("https://velora-backend-production-3e79.up.railway.app/api/categories");
         setCategories(res.data);
       } catch (err) {
         console.error("Failed to fetch categories");
@@ -52,7 +52,7 @@ function AddProduct() {
     formData.append("image", imageFile);
 
     try {
-      await axios.post("http://localhost:5000/api/products", formData);
+      await axios.post("https://velora-backend-production-3e79.up.railway.app/api/products", formData);
       alert("Product added successfully");
       navigate("/admin/products");
     } catch (error) {

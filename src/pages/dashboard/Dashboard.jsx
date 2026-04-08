@@ -11,7 +11,7 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchDashboard = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/dashboard");
+        const res = await axios.get("https://velora-backend-production-3e79.up.railway.app/api/dashboard");
         const data = res.data;
 
         setStats([

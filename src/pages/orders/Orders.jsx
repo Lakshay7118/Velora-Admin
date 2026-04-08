@@ -26,7 +26,7 @@ export default function Orders() {
 
   // Fetch orders
   useEffect(() => {
-    fetch("http://localhost:5000/api/orders")
+    fetch("https://velora-backend-production-3e79.up.railway.app/api/orders")
       .then(res => {
         if (!res.ok) throw new Error("Failed to fetch orders");
         return res.json();
@@ -66,7 +66,7 @@ export default function Orders() {
   const updateStatus = async (id, newStatus) => {
     setStatusLoading(true);
     try {
-      const response = await fetch(`http://localhost:5000/api/orders/${id}`, {
+      const response = await fetch(`https://velora-backend-production-3e79.up.railway.app/api/orders/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: newStatus }),

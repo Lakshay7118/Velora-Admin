@@ -21,11 +21,11 @@ function EditProduct() {
   const [imageFile, setImageFile] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/products/${id}`).then((res) => {
+    axios.get(`https://velora-backend-production-3e79.up.railway.app/api/products/${id}`).then((res) => {
       setData(res.data);
       // Set the initial preview to the existing product image
       if (res.data.image) {
-        setPreview(`http://localhost:5000/${res.data.image}`);
+        setPreview(`https://velora-backend-production-3e79.up.railway.app/${res.data.image}`);
       }
     });
   }, [id]);
@@ -55,7 +55,7 @@ function EditProduct() {
     if (imageFile) formData.append("image", imageFile);
 
     try {
-      await axios.put(`http://localhost:5000/api/products/${id}`, formData);
+      await axios.put(`https://velora-backend-production-3e79.up.railway.app/api/products/${id}`, formData);
       alert("Changes saved successfully!");
       navigate("/admin/products");
     } catch (error) {

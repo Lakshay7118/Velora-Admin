@@ -18,7 +18,7 @@ export default function Products() {
   // 🔹 Fetch products
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/products");
+      const res = await axios.get("https://velora-backend-production-3e79.up.railway.app/api/products");
       setProducts(res.data);
     } catch (error) {
       console.error("Error fetching products", error);
@@ -36,7 +36,7 @@ export default function Products() {
     if (!window.confirm("Are you sure you want to delete this product?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/products/${id}`);
+      await axios.delete(`https://velora-backend-production-3e79.up.railway.app/api/products/${id}`);
       fetchProducts();
     } catch (error) {
       console.error("Delete failed", error);

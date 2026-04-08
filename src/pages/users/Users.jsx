@@ -24,7 +24,7 @@ export default function Users() {
 
   const fetchUsers = () => {
     setLoading(true);
-    fetch("http://localhost:5000/api/users")
+    fetch("https://velora-backend-production-3e79.up.railway.app/api/users")
       .then(res => res.json())
       .then(data => {
         const formatted = data.map((u) => ({
@@ -46,7 +46,7 @@ export default function Users() {
   const toggleStatus = async (userId, currentStatus) => {
   try {
     const token = localStorage.getItem("token"); // or however you store JWT
-    const response = await fetch(`http://localhost:5000/api/users/${userId}/block`, {
+    const response = await fetch(`https://velora-backend-production-3e79.up.railway.app/api/users/${userId}/block`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
